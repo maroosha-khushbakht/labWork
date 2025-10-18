@@ -4,6 +4,12 @@ x64/
 Debug/
 Release/
 
+# Ignore Visual Studio Files
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+
 # Ignore compiled binaries and caches
 *.exe
 *.obj
