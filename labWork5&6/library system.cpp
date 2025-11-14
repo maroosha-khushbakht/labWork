@@ -20,7 +20,7 @@ int main()
             fine *= 2;        
         }
         totalFine+=fine;
-        cout << "fine for book " << i << " is : " << fine << endl;
+        cout << "fine for book " << i << " is: " << fine << endl;
     }
     cout << "total fine: Rs. " << totalFine;
     return 0;
