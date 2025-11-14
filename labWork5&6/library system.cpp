@@ -2,24 +2,26 @@
 using namespace std;
 int main() 
 {
-    int nb, nd, f=5, bf=0, tf=0;
+    int numBook, numDay, fine, bookFine, totalFine=0;
     cout << "Enter the number of books: ";
-    cin >> nb;
+    cin >> numBook;
     
-    for (int i = 1; i <= nb; i++)
-    {   cout << "enter how late book " << i << " is: ";
-        cin >> nd;
-        for (int j = 1; j <= nd; j++)
-        {  bf += f;
-        if (bf >= 1000)
-        {   bf = 1000;
-            break;
+    for (int i = 1; i <= numBook; i++)
+    {   fine = 5;
+        bookFine = 0;
+        cout << "enter how late book " << i << " is: ";
+        cin >> numDay;
+        for (int j = 1; j <= numDay; j++){   
+            bookFine += fine;
+            if (bookFine >= 1000){
+                bookFine = 1000;
+                break;
+            }
+            fine *= 2;        
         }
-        f *= 2;
-        
-        }
-        tf+=f;
+        totalFine+=fine;
+        cout << "fine for book " << i << "is : " << fine << endl;
     }
-    cout << "total fine: Rs. " << tf;
+    cout << "total fine: Rs. " << totalFine;
     return 0;
 }
