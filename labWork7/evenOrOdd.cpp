@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
-void evenOrOdd(int n) 
+bool isEven(int n) 
 {
-    if (n % 2 == 0)
-        cout << "Even";
-    else
-        cout << "Odd";
+    return n % 2 == 0;
 }
 
 int main() 
 {
     int n;
     cin >> n;
-    evenOrOdd(n);
+    if (isEven(n))
+        cout << "Even";
+    else
+        cout << "Odd";
+    return 0;
 }
