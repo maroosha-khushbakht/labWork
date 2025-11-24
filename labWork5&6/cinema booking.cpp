@@ -2,8 +2,12 @@
 using namespace std;
 int main()
 {
-    int r = 3, c = 4;
-    char s[3][4];
+    int r, c;
+    cout << "enter number of rows";
+    cin >> r;
+    cout << "enter number of columns";
+    cin >> c;
+    char s[r][c];
     int x, y;
 
     for (int i = 0; i < r; i++)
