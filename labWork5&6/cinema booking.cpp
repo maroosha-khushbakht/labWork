@@ -1,56 +1,38 @@
 #include <iostream>
 using namespace std;
-int main()
+int main() 
 {
-    int r, c;
-    cout << "enter number of rows";
-    cin >> r;
-    cout << "enter number of columns";
-    cin >> c;
-    char s[r][c];
-    int x, y;
+	int r, c;
+	cout << "Enter number of rows: ";
+	cin >> r;
+	cout << "Enter number of columns: ";
+	cin >> c;
+	char arr[100][100];
 
-    for (int i = 0; i < r; i++)
-        for (int j = 0; j < c; j++)
-            s[i][j] = 'F';
+	for (int i = 0; i < c; i++) 
+	{
+		for (int j = 0; j < r; j++) 
+		{
+			arr[i][j] = 'F';
+			cout << "(" << i << " - " << j << " " << arr[i][j] << ") ";
+		}
+		cout << endl;
+	}
+	int rc, cc;
+	cout << "Enter row of the seat number you want to reserve: ";
+	cin >> rc;
+	cout << "Enter column of the seat number you want to reserve: ";
+	cin >> cc;
+	arr[rc][cc] = 'T';
+	cout << "Updated Seat Reservation Status: " << endl;
+	for (int i = 0; i < c; i++) 
+	{
+		for (int j = 0; j < r; j++) 
+		{
+			cout << "(" << i << " - " << j << " " << arr[i][j] << ") ";
+		}
+		cout << endl;
+	}
+	return 0;
 
-    while (true)
-    {
-        cout << endl << "Current Seat Plan:" << endl;
-        for (int i = 0; i < r; i++)
-        {
-            for (int j = 0; j < c; j++)
-                cout << "(" << i + 1 << "-" << j + 1 << " " << s[i][j] << ") ";
-            cout << endl;
-        }
-
-        cout << endl << "Enter row and column to reserve (00 to stop): ";
-        cin >> x >> y;
-
-        if (x == 0 && y == 0)
-            break;
-
-        x--;
-        y--;
-
-        if (s[x][y] == 'R')
-            cout << "Seat already reserved!" << endl;
-        else
-        {
-            s[x][y] = 'R';
-            cout << "Seat reserved successfully!" << endl;
-        }
-    }
-
-    cout << endl << "Final Seat Plan:" << endl;
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-            cout << "(" << i + 1 << "-" << j + 1 << " " << s[i][j] << ") ";
-        cout << endl;
-    }
-
-    cout << endl << "Thank you!";
-
-    return 0;
 }
